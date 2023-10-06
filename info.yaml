@@ -1,7 +1,7 @@
 --- 
 # Tiny Tapeout project information
 project:
-  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  wokwi_id:    377602795612724225        # If using wokwi, set this to your project's ID
 
 # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
 # Source files must be in ./src and you must list each source file separately
@@ -21,23 +21,35 @@ yaml_version: 4
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
 documentation: 
-  author:       ""      # Your name
-  title:        ""      # Project title
+  author:       "Lucía"      # Your name
+  title:        "Digital Key to Turn On a LED"      # Project title
   language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  description:  ""      # Short description of what your project does
+  description:  "Allows to introduce a binary number of 4 bits to turn on a LED"      # Short description of what your project does
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-      Explain how your project works
+      This circuit allows to introduce a binary number of 4 bits.
+      
+      The LED of the output turn on with the sequence 1101.
+      
+      -With the first switch you select the value of the bit.
+      
+      -With the second switch (when it pass to 0 to 1) you send the selected bit to the sequence.
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-      Explain how to test your project
+      -You make a clock click with the second switch of dip-switch-8.
+      
+      -For each clock click, the bit selected with the first switch is sent to the sequence.
+      
+      -You can see the sequence sent by observing the Yellow LEDs on (zero is off and one is on).
+      
+      -The Red LED turn on with the sequence 1101.
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
-    - none
-    - none
+    - switch 1 (selection bit)
+    - switch 2 (CLK)
     - none
     - none
     - none
@@ -46,14 +58,14 @@ documentation:
     - none
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
-    - segment a
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - dot
+    - status LED 0
+    - status LED 1
+    - status LED 2
+    - status LED 3
+    - none
+    - none
+    - none
+    - none
 # A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
   bidirectional:
     - none
